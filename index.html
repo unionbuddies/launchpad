@@ -7,9 +7,26 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=24">
+<link rel="stylesheet" href="style.css?v=28">
 </head>
 <body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="flameGradOuter" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0%" stop-color="#ffd27a"/>
+        <stop offset="100%" stop-color="#ff5e1a"/>
+      </linearGradient>
+      <linearGradient id="flameGradInner" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0%" stop-color="#fff8e0"/>
+        <stop offset="100%" stop-color="#ffb347"/>
+      </linearGradient>
+      <symbol id="candle-flame" viewBox="-14 -40 28 44">
+        <path d="M0,-38 C9,-23 10,-9 6,-1 C4,4 -4,4 -6,-1 C-10,-9 -9,-23 0,-38 Z" fill="url(#flameGradOuter)"/>
+        <path d="M0,-26 C5,-16 6,-6 3,0 C2,2.5 -2,2.5 -3,0 C-6,-6 -5,-16 0,-26 Z" fill="url(#flameGradInner)"/>
+      </symbol>
+    </defs>
+  </svg>
 
   <div class="scene" aria-hidden="true">
     <img class="scene-photo" src="bg-launchpad.jpg?v=2" alt="">
@@ -50,6 +67,16 @@
           <circle cx="32" cy="32" r="10" fill="none" stroke="#3a4a7a" stroke-width="1.5"/>
         </svg>
         <span class="btn-label">Black holes</span>
+        <svg class="btn-flames" viewBox="0 0 100 100" aria-hidden="true">
+          <g transform="translate(50,3) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d1"/></g>
+          <g transform="translate(83.2,16.8) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d2"/></g>
+          <g transform="translate(97,50) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d3"/></g>
+          <g transform="translate(83.2,83.2) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d4"/></g>
+          <g transform="translate(50,97) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d5"/></g>
+          <g transform="translate(16.8,83.2) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d6"/></g>
+          <g transform="translate(3,50) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d7"/></g>
+          <g transform="translate(16.8,16.8) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d8"/></g>
+        </svg>
       </button>
 
       <button class="explore-btn" data-url="https://solarsystem.space-bound.org/">
@@ -61,6 +88,16 @@
           <circle cx="9" cy="24" r="2.2" fill="#ff9f6b"/>
         </svg>
         <span class="btn-label">The solar system</span>
+        <svg class="btn-flames" viewBox="0 0 100 100" aria-hidden="true">
+          <g transform="translate(50,3) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d1"/></g>
+          <g transform="translate(83.2,16.8) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d2"/></g>
+          <g transform="translate(97,50) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d3"/></g>
+          <g transform="translate(83.2,83.2) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d4"/></g>
+          <g transform="translate(50,97) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d5"/></g>
+          <g transform="translate(16.8,83.2) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d6"/></g>
+          <g transform="translate(3,50) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d7"/></g>
+          <g transform="translate(16.8,16.8) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d8"/></g>
+        </svg>
       </button>
 
       <button class="explore-btn" data-url="https://asteroidcomet.rohankhushraj.workers.dev/">
@@ -72,6 +109,16 @@
           <circle cx="46" cy="14" r="3.2" fill="#ffe6ad"/>
         </svg>
         <span class="btn-label">Asteroids &amp; comets</span>
+        <svg class="btn-flames" viewBox="0 0 100 100" aria-hidden="true">
+          <g transform="translate(50,3) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d1"/></g>
+          <g transform="translate(83.2,16.8) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d2"/></g>
+          <g transform="translate(97,50) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d3"/></g>
+          <g transform="translate(83.2,83.2) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d4"/></g>
+          <g transform="translate(50,97) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d5"/></g>
+          <g transform="translate(16.8,83.2) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d6"/></g>
+          <g transform="translate(3,50) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d7"/></g>
+          <g transform="translate(16.8,16.8) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d8"/></g>
+        </svg>
       </button>
 
       <button class="explore-btn" data-url="https://oortkuiper.arnav-bhingarkar2.workers.dev/">
@@ -86,6 +133,16 @@
           <circle cx="32" cy="56" r="1.5" fill="#cfe0ff"/>
         </svg>
         <span class="btn-label">Oort clouds &amp; the Kuiper belt</span>
+        <svg class="btn-flames" viewBox="0 0 100 100" aria-hidden="true">
+          <g transform="translate(50,3) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d1"/></g>
+          <g transform="translate(83.2,16.8) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d2"/></g>
+          <g transform="translate(97,50) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d3"/></g>
+          <g transform="translate(83.2,83.2) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d4"/></g>
+          <g transform="translate(50,97) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d5"/></g>
+          <g transform="translate(16.8,83.2) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d6"/></g>
+          <g transform="translate(3,50) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d7"/></g>
+          <g transform="translate(16.8,16.8) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d8"/></g>
+        </svg>
       </button>
 
       <button class="explore-btn" data-url="https://jupgreatredspot.arnav-bhingarkar2.workers.dev/">
@@ -96,6 +153,16 @@
           <ellipse cx="24" cy="34" rx="8" ry="4.5" fill="#c0492f"/>
         </svg>
         <span class="btn-label">Jupiter's Great Red Spot</span>
+        <svg class="btn-flames" viewBox="0 0 100 100" aria-hidden="true">
+          <g transform="translate(50,3) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d1"/></g>
+          <g transform="translate(83.2,16.8) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d2"/></g>
+          <g transform="translate(97,50) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d3"/></g>
+          <g transform="translate(83.2,83.2) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d4"/></g>
+          <g transform="translate(50,97) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d5"/></g>
+          <g transform="translate(16.8,83.2) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d6"/></g>
+          <g transform="translate(3,50) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d7"/></g>
+          <g transform="translate(16.8,16.8) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d8"/></g>
+        </svg>
       </button>
 
       <button class="explore-btn" data-url="https://www.rohankhushraj.com/">
@@ -111,6 +178,16 @@
           </g>
         </svg>
         <span class="btn-label">Constellations</span>
+        <svg class="btn-flames" viewBox="0 0 100 100" aria-hidden="true">
+          <g transform="translate(50,3) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d1"/></g>
+          <g transform="translate(83.2,16.8) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d2"/></g>
+          <g transform="translate(97,50) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d3"/></g>
+          <g transform="translate(83.2,83.2) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d4"/></g>
+          <g transform="translate(50,97) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d5"/></g>
+          <g transform="translate(16.8,83.2) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d6"/></g>
+          <g transform="translate(3,50) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d7"/></g>
+          <g transform="translate(16.8,16.8) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d8"/></g>
+        </svg>
       </button>
 
       <button class="explore-btn" data-url="https://bigbang.pranav-bhingarkar2.workers.dev/">
@@ -128,6 +205,16 @@
           <circle cx="32" cy="32" r="7" fill="#fff6e0"/>
         </svg>
         <span class="btn-label">Big Bang Theory</span>
+        <svg class="btn-flames" viewBox="0 0 100 100" aria-hidden="true">
+          <g transform="translate(50,3) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d1"/></g>
+          <g transform="translate(83.2,16.8) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d2"/></g>
+          <g transform="translate(97,50) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d3"/></g>
+          <g transform="translate(83.2,83.2) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d4"/></g>
+          <g transform="translate(50,97) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d5"/></g>
+          <g transform="translate(16.8,83.2) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d6"/></g>
+          <g transform="translate(3,50) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d7"/></g>
+          <g transform="translate(16.8,16.8) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d8"/></g>
+        </svg>
       </button>
 
       <button class="explore-btn" data-url="https://moonsofplanets.pranav-bhingarkar2.workers.dev/#home">
@@ -139,6 +226,16 @@
           <circle cx="52" cy="20" r="0.8" fill="#8a8f94"/>
         </svg>
         <span class="btn-label">Moons of Planets</span>
+        <svg class="btn-flames" viewBox="0 0 100 100" aria-hidden="true">
+          <g transform="translate(50,3) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d1"/></g>
+          <g transform="translate(83.2,16.8) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d2"/></g>
+          <g transform="translate(97,50) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d3"/></g>
+          <g transform="translate(83.2,83.2) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d4"/></g>
+          <g transform="translate(50,97) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d5"/></g>
+          <g transform="translate(16.8,83.2) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d6"/></g>
+          <g transform="translate(3,50) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d7"/></g>
+          <g transform="translate(16.8,16.8) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d8"/></g>
+        </svg>
       </button>
 
       <button class="explore-btn" data-url="https://rocketsandsatellites.pranav-bhingarkar2.workers.dev/">
@@ -154,6 +251,16 @@
           <line x1="52" y1="18" x2="58" y2="24" stroke="#8fc4ff" stroke-width="2"/>
         </svg>
         <span class="btn-label">Rockets &amp; Satellites</span>
+        <svg class="btn-flames" viewBox="0 0 100 100" aria-hidden="true">
+          <g transform="translate(50,3) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d1"/></g>
+          <g transform="translate(83.2,16.8) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d2"/></g>
+          <g transform="translate(97,50) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d3"/></g>
+          <g transform="translate(83.2,83.2) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d4"/></g>
+          <g transform="translate(50,97) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d5"/></g>
+          <g transform="translate(16.8,83.2) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d6"/></g>
+          <g transform="translate(3,50) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d7"/></g>
+          <g transform="translate(16.8,16.8) rotate(0) scale(0.14)"><use href="#candle-flame" class="flame-sway flame-d8"/></g>
+        </svg>
       </button>
     </div>
 
