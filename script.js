@@ -127,12 +127,12 @@
 
     status.textContent = "Launching to " + label + "…";
     status.classList.add("visible");
+    stage.classList.add("hide-ui");
 
     rocketWrap.classList.add("shaking");
 
     setTimeout(function () {
       rocketWrap.classList.remove("shaking");
-      stage.classList.add("hide-ui");
       rocketWrap.classList.add("launching");
       puffInterval = setInterval(spawnPuff, 110);
     }, 500);
