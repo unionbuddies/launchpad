@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Space Bound</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=20">
+</head>
+<body>
+
+  <div class="scene" aria-hidden="true">
+    <img class="scene-photo" src="bg-launchpad.jpg?v=2" alt="">
+    <div class="scene-overlay"></div>
+
+    <svg class="bird-flight bird-1" viewBox="0 0 36 22" xmlns="http://www.w3.org/2000/svg">
+      <g class="wing-flap">
+        <path d="M0,11 Q9,0 18,11 Q27,0 36,11" stroke="#1c1b1a" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </g>
+    </svg>
+    <svg class="bird-flight bird-2" viewBox="0 0 30 18" xmlns="http://www.w3.org/2000/svg">
+      <g class="wing-flap">
+        <path d="M0,9 Q7.5,0 15,9 Q22.5,0 30,9" stroke="#1c1b1a" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      </g>
+    </svg>
+    <svg class="bird-flight bird-3" viewBox="0 0 32 20" xmlns="http://www.w3.org/2000/svg">
+      <g class="wing-flap">
+        <path d="M0,10 Q8,0 16,10 Q24,0 32,10" stroke="#1c1b1a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+      </g>
+    </svg>
+  </div>
+
+  <main class="stage" id="stage">
+    <h1 class="title">What do you want to explore?</h1>
+
+    <div class="crest">
+      <p class="crest-headline">Space Bound with the Union Buddies</p>
+      <div class="crest-rule"></div>
+      <p class="crest-sub">Rohan, Arnav, Pranav</p>
+    </div>
+
+    <div class="orbit" id="orbit">
+      <button class="explore-btn" data-url="https://blackholes.rohankhushraj.workers.dev/">
+        <svg class="btn-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="32" cy="34" rx="27" ry="9" fill="none" stroke="#ffd68c" stroke-width="2.5"/>
+          <ellipse cx="32" cy="34" rx="18" ry="5.5" fill="none" stroke="#8fc4ff" stroke-width="2"/>
+          <circle cx="32" cy="32" r="10" fill="#05070d"/>
+          <circle cx="32" cy="32" r="10" fill="none" stroke="#3a4a7a" stroke-width="1.5"/>
+        </svg>
+        <span class="btn-label">Black holes</span>
+      </button>
+
+      <button class="explore-btn" data-url="https://solarsystem.rohankhushraj.workers.dev/">
+        <svg class="btn-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="9" fill="#ffce6b"/>
+          <circle cx="32" cy="32" r="18" fill="none" stroke="#8fc4ff" stroke-width="1.5" opacity="0.8"/>
+          <circle cx="32" cy="32" r="27" fill="none" stroke="#5c86c9" stroke-width="1.5" opacity="0.6"/>
+          <circle cx="50" cy="32" r="3" fill="#9fd0ff"/>
+          <circle cx="9" cy="24" r="2.2" fill="#ff9f6b"/>
+        </svg>
+        <span class="btn-label">The solar system</span>
+      </button>
+
+      <button class="explore-btn" data-url="https://asteroidcomet.rohankhushraj.workers.dev/">
+        <svg class="btn-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14,34 L20,26 L30,27 L34,20 L42,24 L40,34 L32,40 L20,40 Z" fill="#9aa4b8" stroke="#5c6478" stroke-width="1.5"/>
+          <circle cx="24" cy="32" r="1.6" fill="#5c6478"/>
+          <circle cx="32" cy="34" r="1.4" fill="#5c6478"/>
+          <path d="M46,14 C50,18 52,24 50,30" stroke="#ffd68c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <circle cx="46" cy="14" r="3.2" fill="#ffe6ad"/>
+        </svg>
+        <span class="btn-label">Asteroids &amp; comets</span>
+      </button>
+
+      <button class="explore-btn" data-url="https://oortkuiper.arnav-bhingarkar2.workers.dev/">
+        <svg class="btn-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="6" fill="#ffce6b"/>
+          <circle cx="32" cy="32" r="24" fill="none" stroke="#5c86c9" stroke-width="1.4" stroke-dasharray="2 4" opacity="0.9"/>
+          <circle cx="14" cy="22" r="1.6" fill="#cfe0ff"/>
+          <circle cx="50" cy="20" r="1.4" fill="#cfe0ff"/>
+          <circle cx="10" cy="42" r="1.5" fill="#cfe0ff"/>
+          <circle cx="54" cy="40" r="1.6" fill="#cfe0ff"/>
+          <circle cx="32" cy="8" r="1.4" fill="#cfe0ff"/>
+          <circle cx="32" cy="56" r="1.5" fill="#cfe0ff"/>
+        </svg>
+        <span class="btn-label">Oort clouds &amp; the Kuiper belt</span>
+      </button>
+
+      <button class="explore-btn" data-url="https://jupgreatredspot.arnav-bhingarkar2.workers.dev/">
+        <svg class="btn-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="22" fill="#e8c9a0"/>
+          <path d="M10,26 Q32,22 54,26" stroke="#c9a679" stroke-width="2.5" fill="none"/>
+          <path d="M10,38 Q32,34 54,38" stroke="#c9a679" stroke-width="2.5" fill="none"/>
+          <ellipse cx="24" cy="34" rx="8" ry="4.5" fill="#c0492f"/>
+        </svg>
+        <span class="btn-label">Jupiter's Great Red Spot</span>
+      </button>
+
+      <button class="explore-btn" data-url="https://www.rohankhushraj.com/">
+        <svg class="btn-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#ffd68c" stroke-width="1.6" fill="none">
+            <path d="M12,44 L22,26 L34,34 L46,16"/>
+          </g>
+          <g fill="#fff6e0">
+            <circle cx="12" cy="44" r="2.4"/>
+            <circle cx="22" cy="26" r="2.4"/>
+            <circle cx="34" cy="34" r="2.4"/>
+            <circle cx="46" cy="16" r="2.4"/>
+          </g>
+        </svg>
+        <span class="btn-label">Constellations</span>
+      </button>
+
+      <button class="explore-btn" data-url="https://bigbang.pranav-bhingarkar2.workers.dev/">
+        <svg class="btn-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#ffce6b" stroke-width="2.4" stroke-linecap="round">
+            <line x1="32" y1="32" x2="32" y2="8"/>
+            <line x1="32" y1="32" x2="50" y2="18"/>
+            <line x1="32" y1="32" x2="56" y2="32"/>
+            <line x1="32" y1="32" x2="50" y2="46"/>
+            <line x1="32" y1="32" x2="32" y2="56"/>
+            <line x1="32" y1="32" x2="14" y2="46"/>
+            <line x1="32" y1="32" x2="8" y2="32"/>
+            <line x1="32" y1="32" x2="14" y2="18"/>
+          </g>
+          <circle cx="32" cy="32" r="7" fill="#fff6e0"/>
+        </svg>
+        <span class="btn-label">Big Bang Theory</span>
+      </button>
+
+      <button class="explore-btn" data-url="https://moonsofplanets.pranav-bhingarkar2.workers.dev/#home">
+        <svg class="btn-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="28" cy="32" r="16" fill="#5c86c9"/>
+          <path d="M40,20 A16,16 0 1 0 40,44 A12,12 0 1 1 40,20 Z" fill="#0c1a3d"/>
+          <circle cx="50" cy="18" r="6" fill="#c9ced2"/>
+          <circle cx="48" cy="16" r="1" fill="#8a8f94"/>
+          <circle cx="52" cy="20" r="0.8" fill="#8a8f94"/>
+        </svg>
+        <span class="btn-label">Moons of Planets</span>
+      </button>
+
+      <button class="explore-btn" data-url="https://rocketsandsatellites.pranav-bhingarkar2.workers.dev/">
+        <svg class="btn-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <g transform="rotate(45 20 44)">
+            <path d="M20,14 C25,20 25,30 25,38 L15,38 C15,30 15,20 20,14 Z" fill="#e6eaee" stroke="#8a8f94" stroke-width="1"/>
+            <path d="M15,36 L9,44 L15,42 Z" fill="#c0492f"/>
+            <path d="M25,36 L31,44 L25,42 Z" fill="#c0492f"/>
+            <path d="M17,42 L23,42 L21,48 L19,48 Z" fill="#ff9f4d"/>
+          </g>
+          <rect x="42" y="16" width="10" height="8" rx="1.5" fill="#c9ced2" transform="rotate(30 47 20)"/>
+          <line x1="38" y1="10" x2="44" y2="15" stroke="#8fc4ff" stroke-width="2"/>
+          <line x1="52" y1="18" x2="58" y2="24" stroke="#8fc4ff" stroke-width="2"/>
+        </svg>
+        <span class="btn-label">Rockets &amp; Satellites</span>
+      </button>
+    </div>
+
+    <div class="rocket-wrap" id="rocketWrap">
+      <div class="smoke-trail" id="smokeTrail"></div>
+
+      <img class="rocket-photo-img" src="rocket-photo.png" alt="">
+
+      <svg class="rocket-flame-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="flameGradientOuter" cx="50%" cy="0%" r="90%">
+            <stop offset="0%" stop-color="#fff6c8"/>
+            <stop offset="35%" stop-color="#ffb347"/>
+            <stop offset="70%" stop-color="#ff6a2b"/>
+            <stop offset="100%" stop-color="#d6301c" stop-opacity="0.85"/>
+          </radialGradient>
+
+          <radialGradient id="flameGradientInner" cx="50%" cy="0%" r="90%">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="45%" stop-color="#fff1a8"/>
+            <stop offset="100%" stop-color="#ffb347" stop-opacity="0.9"/>
+          </radialGradient>
+        </defs>
+
+        <!-- idle flame -->
+        <g id="flame" class="flame-idle" style="transform-origin: 50px 10px;">
+          <path d="M50,10 C30,42 32,68 50,96 C68,68 70,42 50,10 Z" fill="url(#flameGradientOuter)"/>
+          <path d="M50,10 C39,32 40,52 50,74 C60,52 61,32 50,10 Z" fill="url(#flameGradientInner)"/>
+        </g>
+      </svg>
+    </div>
+
+    <p class="status" id="status"></p>
+  </main>
+
+  <script src="script.js?v=12"></script>
+</body>
+</html>
