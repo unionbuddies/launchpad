@@ -245,6 +245,20 @@ html, body {
   pointer-events: none;
 }
 
+/* Fiery glow, hidden until hover — a separate layer behind the button so
+   it doesn't fight with the badge's own ring/shadow styling. */
+.explore-btn::after {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 170, 60, 0.65) 0%, rgba(255, 90, 20, 0.4) 45%, transparent 74%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.25s ease;
+}
+
 .btn-icon {
   width: 34%;
   height: 34%;
@@ -254,7 +268,7 @@ html, body {
 .btn-label {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-size: clamp(1.4rem, 2.6vw, 1.85rem);
   letter-spacing: 0.5px;
   text-transform: uppercase;
   line-height: 1.15;
@@ -263,7 +277,8 @@ html, body {
 }
 
 .explore-btn:hover {
-  transform: translate(-50%, calc(-50% - 6px)) scale(var(--btn-scale));
+  transform: translate(-50%, calc(-50% - 6px)) scale(calc(var(--btn-scale) * 1.9));
+  z-index: 10;
   background:
     radial-gradient(circle at 32% 28%, rgba(120, 170, 255, 0.4), transparent 55%),
     rgba(18, 30, 58, 0.85);
@@ -273,6 +288,17 @@ html, body {
     0 0 26px rgba(140, 190, 255, 0.65),
     0 12px 26px rgba(0, 0, 0, 0.5),
     inset 0 0 26px rgba(140, 190, 255, 0.3);
+}
+
+.explore-btn:hover::after {
+  opacity: 1;
+  animation: fireFlicker 0.45s ease-in-out infinite alternate;
+}
+
+@keyframes fireFlicker {
+  0% { transform: scale(0.92) rotate(-3deg); filter: blur(5px) brightness(1); }
+  50% { transform: scale(1.06) rotate(2deg); filter: blur(9px) brightness(1.2); }
+  100% { transform: scale(0.97) rotate(4deg); filter: blur(6px) brightness(1.08); }
 }
 
 .explore-btn:active,
