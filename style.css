@@ -218,8 +218,8 @@ html, body {
   justify-content: center;
   gap: 4px;
   padding: 10px;
-  width: clamp(200px, 20vw, 252px);
-  height: clamp(200px, 20vw, 252px);
+  width: clamp(230px, 23vw, 290px);
+  height: clamp(230px, 23vw, 290px);
   border-radius: 50%;
   border: none;
   background:
