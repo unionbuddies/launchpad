@@ -134,6 +134,8 @@
     document.head.appendChild(prefetch);
   }
 
+  var launchTimers = [];
+
   function handleLaunch(url, label) {
     if (launched) return;
     launched = true;
@@ -156,19 +158,54 @@
 
     rocketWrap.classList.add("shaking");
 
-    setTimeout(function () {
+    launchTimers.push(setTimeout(function () {
       rocketWrap.classList.remove("shaking");
       rocketWrap.classList.add("launching");
       puffInterval = setInterval(spawnPuff, 110);
-    }, 300);
+    }, 300));
 
-    setTimeout(function () {
+    launchTimers.push(setTimeout(function () {
       if (puffInterval) clearInterval(puffInterval);
-    }, 1900);
+    }, 1900));
 
-    setTimeout(function () {
+    launchTimers.push(setTimeout(function () {
       window.location.href = url;
-    }, 2100);
+    }, 2100));
+  }
+
+  // Browsers restore a page from the back/forward cache exactly as it was
+  // frozen — mid-launch, with the title/crest/buttons hidden and "Launching
+  // to X…" on screen — instead of the fresh initial state. Detect that via
+  // the pageshow event's `persisted` flag and reset everything back to the
+  // pre-launch state.
+  function resetLaunchState() {
+    launched = false;
+
+    launchTimers.forEach(clearTimeout);
+    launchTimers = [];
+    if (puffInterval) {
+      clearInterval(puffInterval);
+      puffInterval = null;
+    }
+
+    var stage = document.getElementById("stage");
+    var rocketWrap = document.getElementById("rocketWrap");
+    var status = document.getElementById("status");
+    var smokeTrail = document.getElementById("smokeTrail");
+
+    stage.classList.remove("hide-ui");
+    rocketWrap.classList.remove("shaking", "launching");
+    status.classList.remove("visible");
+    status.textContent = "";
+    if (smokeTrail) smokeTrail.innerHTML = "";
+
+    document.querySelectorAll(".explore-btn").forEach(function (b) {
+      b.disabled = false;
+      b.style.pointerEvents = "";
+      b.classList.remove("chosen");
+    });
+
+    layoutButtons();
   }
 
   function init() {
@@ -199,6 +236,10 @@
       resizeTimer = setTimeout(function () {
         if (!launched) layoutButtons();
       }, 150);
+    });
+
+    window.addEventListener("pageshow", function (e) {
+      if (e.persisted) resetLaunchState();
     });
   }
 
