@@ -135,15 +135,15 @@
       rocketWrap.classList.remove("shaking");
       rocketWrap.classList.add("launching");
       puffInterval = setInterval(spawnPuff, 110);
-    }, 500);
+    }, 350);
 
     setTimeout(function () {
       if (puffInterval) clearInterval(puffInterval);
-    }, 3800);
+    }, 2250);
 
     setTimeout(function () {
       window.location.href = url;
-    }, 4000);
+    }, 2450);
   }
 
   function init() {
