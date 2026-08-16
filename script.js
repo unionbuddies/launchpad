@@ -111,6 +111,29 @@
   // ---------- Launch sequence ----------
   var launched = false;
 
+  // Start warming up the destination the instant the button is clicked,
+  // rather than waiting for the liftoff animation to finish — by the time
+  // we actually navigate, the connection (and ideally the page itself) is
+  // already warm, so the destination feels like it loads instantly.
+  function warmUpDestination(url) {
+    var origin = new URL(url).origin;
+
+    var preconnect = document.createElement("link");
+    preconnect.rel = "preconnect";
+    preconnect.href = origin;
+    document.head.appendChild(preconnect);
+
+    var dnsPrefetch = document.createElement("link");
+    dnsPrefetch.rel = "dns-prefetch";
+    dnsPrefetch.href = origin;
+    document.head.appendChild(dnsPrefetch);
+
+    var prefetch = document.createElement("link");
+    prefetch.rel = "prefetch";
+    prefetch.href = url;
+    document.head.appendChild(prefetch);
+  }
+
   function handleLaunch(url, label) {
     if (launched) return;
     launched = true;
@@ -125,6 +148,8 @@
       b.style.pointerEvents = "none";
     });
 
+    warmUpDestination(url);
+
     status.textContent = "Launching to " + label + "…";
     status.classList.add("visible");
     stage.classList.add("hide-ui");
@@ -135,15 +160,15 @@
       rocketWrap.classList.remove("shaking");
       rocketWrap.classList.add("launching");
       puffInterval = setInterval(spawnPuff, 110);
-    }, 350);
+    }, 300);
 
     setTimeout(function () {
       if (puffInterval) clearInterval(puffInterval);
-    }, 2250);
+    }, 1900);
 
     setTimeout(function () {
       window.location.href = url;
-    }, 2450);
+    }, 2100);
   }
 
   function init() {

@@ -343,7 +343,7 @@ html, body {
 }
 
 .rocket-wrap.launching {
-  animation: liftoff 2.1s cubic-bezier(0.3, 0, 0.7, 1) forwards;
+  animation: liftoff 1.8s cubic-bezier(0.3, 0, 0.7, 1) forwards;
 }
 
 @keyframes liftoff {
