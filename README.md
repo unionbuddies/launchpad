@@ -13,7 +13,7 @@ Click a topic, and a real NASA rocket photo blasts off the launch pad (shake →
 - **[Asteroids & Comets](https://asteroidcomet.space-bound.org)** — a four-module curriculum on the "Rocks & Ice of Our Solar System": composition and size comparisons, a comet-behavior simulator, how NASA tracks near-Earth objects, and a virtual landing on an asteroid.
 - **[Oort Clouds & the Kuiper Belt](https://oortkuiper.space-bound.org)** — a scroll-to-zoom, drag-to-rotate 3D map of the outer solar system beyond Neptune, with clickable objects and dust.
 - **[Jupiter's Great Red Spot](https://jupgreatredspot.space-bound.org)** — a rotatable 3D model of Jupiter paired with the science of why its 190+ year-old storm has persisted (and why it's been shrinking for over a century).
-- **[Constellations](https://www.rohankhushraj.com)** — links out to Rohan's personal site/portfolio rather than a dedicated project.
+- **[Constellations](https://starconstell.pages.dev)** — an interactive night-sky explorer for identifying stars and constellations.
 - **[Big Bang Theory](https://bigbang.space-bound.org)** — a nine-stage, arrow-key-navigable walkthrough of cosmic history starting at t = 0.
 - **[Moons of Planets](https://moonsofplanets.space-bound.org)** — an interactive 3D guide to every planet's moons (Mercury and Venus excluded — they don't have any), covering orbital terms like prograde/retrograde motion and eccentricity.
 - **[Rockets & Satellites](https://rocketsandsatellites.space-bound.org)** — a curated, expandable roster of history's major spacecraft and launch vehicles.
@@ -31,7 +31,7 @@ Plain HTML/CSS/JS, no framework or build step:
 
 - Hosted on **Cloudflare Pages**, auto-deploying from this repo on every push to `main`
 - Custom domain **space-bound.org** (registered on IONOS, DNS on Cloudflare)
-- Each topic routes through its own `*.space-bound.org` subdomain to the teammate's original project, spanning three separate Cloudflare accounts
+- Each topic (except Constellations, hosted directly on Cloudflare Pages) routes through its own `*.space-bound.org` subdomain to the teammate's original project, spanning three separate Cloudflare accounts
 
 ## Team
 
