@@ -82,39 +82,34 @@
 
     // Center the crest inside the arc's hollow, sized so that even its
     // corners stay clear of the ring of medallions around it. The crest is
-    // roughly square (logo image on top of rule/subtitle text), so a plain
+    // roughly square (logo + headline + rule + subtitle), so a plain
     // vertical height cap isn't enough — a button positioned diagonally
     // (like Constellations, up and to the right) can still be closer to
-    // the crest's corner than to its edge. Shrink-to-fit on that corner
-    // distance instead, the same iterative approach used for the buttons.
+    // the crest's corner than to its edge, AND the headline text re-wraps
+    // to more/fewer lines as the box narrows, which changes its own
+    // height. Rather than estimate that, shrink-to-fit against the crest's
+    // real *measured* rendered size each iteration.
     if (crestEl) {
-      var crestCenterY = arcCenterY - radius * 0.32;
+      // Pulled down closer to arcCenterY (was 0.32) to buy more vertical
+      // room now that the crest holds a logo + headline + rule + subtitle
+      // instead of one short line — it's fine for the box to sit further
+      // over the rocket's nose since it already renders above it (z-index).
+      var verticalOffset = radius * 0.14;
+      var crestCenterY = arcCenterY - verticalOffset;
       crestEl.style.left = arcCenterX + "px";
       crestEl.style.top = crestCenterY + "px";
 
-      var logoEl = crestEl.querySelector(".crest-logo");
-      if (logoEl) {
-        var logoAspect = 826 / 801;
-        var paddingX = 104; // .crest left+right padding
-        var chromeH = 128; // .crest vertical padding + gaps + rule + subtitle
-        var safeRadius = radius - 60; // leave room for button radius + gap
-        var verticalOffset = radius * 0.32;
+      var safeRadius = radius - 40; // leave room for button radius + gap
 
-        var logoW = 320;
-        for (var ci = 0; ci < 20; ci++) {
-          var logoH = logoW / logoAspect;
-          var halfW = (logoW + paddingX) / 2;
-          var halfH = (logoH + chromeH) / 2;
-          var cornerDist = Math.sqrt(halfW * halfW + Math.pow(verticalOffset + halfH, 2));
-          if (cornerDist <= safeRadius) break;
-          logoW *= 0.94;
-        }
-        logoW = Math.max(logoW, 90);
-
-        logoEl.style.maxWidth = logoW + "px";
-        crestEl.style.maxWidth = (logoW + paddingX) + "px";
-      } else {
-        crestEl.style.maxWidth = Math.max(radius * 1.3, 220) + "px";
+      var candidateWidth = Math.min(radius * 1.1, 380);
+      for (var ci = 0; ci < 20; ci++) {
+        crestEl.style.maxWidth = candidateWidth + "px";
+        var rect = crestEl.getBoundingClientRect();
+        var halfW = rect.width / 2;
+        var halfH = rect.height / 2;
+        var cornerDist = Math.sqrt(halfW * halfW + Math.pow(verticalOffset + halfH, 2));
+        if (cornerDist <= safeRadius || candidateWidth <= 200) break;
+        candidateWidth *= 0.93;
       }
     }
   }
