@@ -80,12 +80,42 @@
       btn.style.setProperty("--btn-scale", scale);
     });
 
-    // Center the crest headline inside the arc's hollow, sized to not
-    // touch the ring of medallions around it.
+    // Center the crest inside the arc's hollow, sized so that even its
+    // corners stay clear of the ring of medallions around it. The crest is
+    // roughly square (logo image on top of rule/subtitle text), so a plain
+    // vertical height cap isn't enough — a button positioned diagonally
+    // (like Constellations, up and to the right) can still be closer to
+    // the crest's corner than to its edge. Shrink-to-fit on that corner
+    // distance instead, the same iterative approach used for the buttons.
     if (crestEl) {
+      var crestCenterY = arcCenterY - radius * 0.32;
       crestEl.style.left = arcCenterX + "px";
-      crestEl.style.top = (arcCenterY - radius * 0.32) + "px";
-      crestEl.style.maxWidth = Math.max(radius * 1.3, 220) + "px";
+      crestEl.style.top = crestCenterY + "px";
+
+      var logoEl = crestEl.querySelector(".crest-logo");
+      if (logoEl) {
+        var logoAspect = 826 / 801;
+        var paddingX = 104; // .crest left+right padding
+        var chromeH = 128; // .crest vertical padding + gaps + rule + subtitle
+        var safeRadius = radius - 60; // leave room for button radius + gap
+        var verticalOffset = radius * 0.32;
+
+        var logoW = 320;
+        for (var ci = 0; ci < 20; ci++) {
+          var logoH = logoW / logoAspect;
+          var halfW = (logoW + paddingX) / 2;
+          var halfH = (logoH + chromeH) / 2;
+          var cornerDist = Math.sqrt(halfW * halfW + Math.pow(verticalOffset + halfH, 2));
+          if (cornerDist <= safeRadius) break;
+          logoW *= 0.94;
+        }
+        logoW = Math.max(logoW, 90);
+
+        logoEl.style.maxWidth = logoW + "px";
+        crestEl.style.maxWidth = (logoW + paddingX) + "px";
+      } else {
+        crestEl.style.maxWidth = Math.max(radius * 1.3, 220) + "px";
+      }
     }
   }
 

@@ -165,16 +165,12 @@ html, body {
   max-width: min(86vw, 720px);
 }
 
-.crest-headline {
-  margin: 0;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(1.3rem, 3.4vw, 2.5rem);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #fff2da;
-  text-shadow: 0 0 18px rgba(255, 190, 110, 0.7), 0 2px 8px rgba(0, 0, 0, 0.55);
-  line-height: 1.15;
+.crest-logo {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 14px;
+  filter: drop-shadow(0 0 22px rgba(120, 160, 255, 0.35)) drop-shadow(0 6px 18px rgba(0, 0, 0, 0.5));
 }
 
 .crest-rule {
